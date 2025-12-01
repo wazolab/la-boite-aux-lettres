@@ -11,6 +11,9 @@ importers:
       '@nuxt/content':
         specifier: ^3.8.2
         version: 3.8.2(better-sqlite3@12.5.0)(magicast@0.5.1)
+      '@unocss/reset':
+        specifier: 66.5.10-beta.1
+        version: 66.5.10-beta.1
       better-sqlite3:
         specifier: ^12.5.0
         version: 12.5.0
@@ -1131,6 +1134,9 @@ packages:
     resolution: {integrity: sha512-7BYjHfOaoZ9+ARJkT10Q2TjnTUqDXmMpfakIAsD/hXiuff1oqWg1xeXT5+MomhNcC15HbiABpbbBmITLSHxdKg==}
     peerDependencies:
       vue: '>=3.5.18'
+
+  '@unocss/reset@66.5.10-beta.1':
+    resolution: {integrity: sha512-XLysNLeuSF58K6BpGR4C8DXkiwsFGn1XnGUhIC2srDvK6Vddaggea68UgtjFytbR1nPJqKubh2kkaMjht7+MJA==}
 
   '@vercel/nft@0.30.4':
     resolution: {integrity: sha512-wE6eAGSXScra60N2l6jWvNtVK0m+sh873CpfZW4KI2v8EHuUQp+mSEi4T+IcdPCSEDgCdAS/7bizbhQlkjzrSA==}
@@ -5024,6 +5030,8 @@ snapshots:
       hookable: 5.5.3
       unhead: 2.0.19
       vue: 3.5.25(typescript@5.9.3)
+
+  '@unocss/reset@66.5.10-beta.1': {}
 
   '@vercel/nft@0.30.4(rollup@4.53.3)':
     dependencies:
