@@ -5,5 +5,12 @@ export default defineNuxtConfig({
     experimental: { nativeSqlite: true }
   },
   devtools: { enabled: true },
-  modules: ['@nuxt/content']
+  css: ['@unocss/reset/eric-meyer.css'],
+  fonts: {
+    defaults: {
+      weights: [400, 500],
+      styles: ['normal']
+    }
+  },
+  modules: ['@nuxt/content', '@nuxt/fonts']
 })

@@ -26,4 +26,9 @@ img:first-of-type {
   margin-bottom: auto;
   width: 36vw;
 }
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
 </style>
