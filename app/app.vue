@@ -8,6 +8,12 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #000;
+
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
 }
 
 html, body, p {
