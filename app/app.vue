@@ -16,7 +16,7 @@
   --breakpoint-2xl: 1400px;
 }
 
-html, body, p, a {
+html, body, p, a, address {
   font-family: 'Abbiocco Beta', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', sans-serif;
 }
