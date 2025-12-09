@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { provideSSRWidth } from '@vueuse/core'
+
+provideSSRWidth(500)
+</script>
+
 <template>
   <NuxtLayout>
     <NuxtPage />
@@ -8,12 +14,6 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #000;
-
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --breakpoint-2xl: 1400px;
 }
 
 html, body, p, a, address {
