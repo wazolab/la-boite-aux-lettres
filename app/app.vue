@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { provideSSRWidth } from '@vueuse/core'
-
-provideSSRWidth(500)
-</script>
-
 <template>
   <NuxtLayout>
     <NuxtPage />
