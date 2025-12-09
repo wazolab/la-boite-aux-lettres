@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+
 const appConfig = useAppConfig()
 
 const scrollThreshold = ref<number>(0)
@@ -28,7 +30,12 @@ const { isScrolled } = useScroll(effectiveScrollThreshold.value)
   </header>
   <header class="app-header--sticky" v-if="isScrolled">
     <img src="~/assets/images/brand-desktop.svg" :alt="appConfig.title" />
-    <NuxtLink to="#about">⭣ About</NuxtLink>
+
+    <nav>
+      <!-- <NuxtLink v-if="isLargeScreen" to="#top">↓ Back on top</NuxtLink> -->
+      <NuxtLink to="#about">↓ About</NuxtLink>
+      <NuxtLink v-if="isLargeScreen" to="#contact">↓ Contact</NuxtLink>
+    </nav>
   </header>
 </template>
 
@@ -83,8 +90,13 @@ const { isScrolled } = useScroll(effectiveScrollThreshold.value)
   width: 300px;
 }
 
-a {
+nav {
+  display: flex;
+  gap: 2.5rem;
   margin-left: auto;
+}
+
+a {
   font-weight: 500;
   color: inherit;
 }
@@ -92,5 +104,20 @@ a {
 p {
   font-size: 1.25rem;
   line-height: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .app-header--sticky {
+    height: 114px;
+    padding: 2.6rem 4rem;
+  }
+
+  .app-header--sticky img {
+    height: 30px;
+  }
+
+  a {
+    font-size: 1.25rem;
+  }
 }
 </style>
