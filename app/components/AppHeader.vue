@@ -2,24 +2,13 @@
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 
 const appConfig = useAppConfig()
+const { height } = useWindowSize()
 
-const scrollThreshold = ref<number>(0)
-
-onMounted(() => {
-  const updateThreshold = () => {
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    
-    scrollThreshold.value = Math.round(viewportHeight * 0.68);
-  }
-
-  updateThreshold()
+const  scrollThreshold = computed(() => {    
+  return Math.round(height.value * 0.68);
 })
 
-const effectiveScrollThreshold = computed(() => {
-  return import.meta.client ? scrollThreshold.value : 0;
-});
-
-const { isScrolled } = useScroll(effectiveScrollThreshold.value)
+const { isScrolled } = useScroll(scrollThreshold.value)
 </script>
 
 <template>
@@ -61,6 +50,7 @@ const { isScrolled } = useScroll(effectiveScrollThreshold.value)
   flex-direction: column;
   padding: 3rem 2rem;
   height: 68vh;
+  box-sizing: border-box;
 }
 
 .app-header--sticky {
