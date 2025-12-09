@@ -12,5 +12,9 @@ export default defineNuxtConfig({
       styles: ['normal']
     }
   },
-  modules: ['@nuxt/content', '@nuxt/fonts']
+  modules: [
+    '@nuxt/content',
+    '@nuxt/fonts',
+    '@vueuse/nuxt'
+  ]
 })
