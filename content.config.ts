@@ -6,7 +6,7 @@ export default defineContentConfig({
       type: 'page',
       source: '*.md',
       schema: z.object({
-        
+        description2: z.string()
       })
     }),
     projects: defineCollection({
@@ -18,6 +18,9 @@ export default defineContentConfig({
         shortDescription: z.string(),
         description: z.string(),
         image: z.string(),
+        toggleUrl: z.string(),
+        toggleText: z.string(),
+        popupImage: z.string(),
         preview: z.string(),
         isDraft: z.boolean()
       })

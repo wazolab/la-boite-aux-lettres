@@ -22,4 +22,8 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+.arrow-icon {
+  width: 12px;
+}
 </style>

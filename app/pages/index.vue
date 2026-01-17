@@ -27,8 +27,12 @@ useSeoMeta({
     </section>
     <section id="about" v-if="about">
       <article>
-        <h2>↓ {{ about.title }}</h2>
+        <h2>
+          <img class="arrow-icon" src="~/assets/icons/arrow-down-black.svg" alt="" />
+          {{ about.title }}
+        </h2>
         <p>{{ about.description }}</p>
+        <p>{{ about.description2 }}</p>
       </article>
     </section>
   </template>
@@ -54,9 +58,16 @@ useSeoMeta({
 #about article {
   border-top: 1px solid var(--secondary-color);
   border-bottom: 1px solid var(--secondary-color);
-  padding: 1rem 0;
+  padding: 0.5rem 0 1rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  line-height: 20px;
+}
+
+article h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 </style>

@@ -14,16 +14,27 @@ const { isScrolled } = useScroll(scrollThreshold.value)
 <template>
   <header class="app-header">
     <img class="brand-logo" src="~/assets/images/brand-logo.svg" :alt="`${appConfig.title} - Logo`" />
-    <img class="brand" src="~/assets/images/brand-mobile.svg" :alt="appConfig.title" />
-    <p>{{ appConfig.description }}</p>
+    <div>
+      <img class="brand" src="~/assets/images/brand-mobile.svg" :alt="appConfig.title" />
+      <div>
+        <p>{{ appConfig.description }}</p>
+        <p>{{ appConfig.description2 }}</p>
+      </div>
+    </div>
   </header>
   <header class="app-header--sticky" v-if="isScrolled">
     <img src="~/assets/images/brand-desktop.svg" :alt="appConfig.title" />
 
     <nav>
       <!-- <NuxtLink v-if="isLargeScreen" to="#top">↓ Back on top</NuxtLink> -->
-      <NuxtLink to="#about">↓ About</NuxtLink>
-      <NuxtLink v-if="isLargeScreen" to="#contact">↓ Contact</NuxtLink>
+      <NuxtLink to="#about">
+        <img class="arrow-icon" src="~/assets/icons/arrow-down-black.svg" alt="" />
+        About
+      </NuxtLink>
+      <NuxtLink v-if="isLargeScreen" to="#contact">
+        <img class="arrow-icon" src="~/assets/icons/arrow-down-black.svg" alt="" />
+        Contact
+      </NuxtLink>
     </nav>
   </header>
 </template>
@@ -53,12 +64,18 @@ const { isScrolled } = useScroll(scrollThreshold.value)
   box-sizing: border-box;
 }
 
+.app-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .app-header--sticky {
   position: fixed;
   top: 0;
   width: 100%;
   height: 34px;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1rem;
   align-items: center;
   animation: slideDown 0.3s ease;
   z-index: 10;
@@ -87,7 +104,6 @@ nav {
 }
 
 a {
-  font-weight: 500;
   color: inherit;
 }
 
@@ -96,18 +112,82 @@ p {
   line-height: 1.5rem;
 }
 
+@media (min-width: 768px) {
+  .app-header {
+    height: 100vh;
+  }
+
+  .app-header > div {
+    position: absolute;
+    bottom: 3rem;
+  }
+
+  .brand {
+    width: 332px;
+  }
+
+  .brand-logo {
+    width: 168px;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: inherit;
+  }
+}
+
 @media (min-width: 1024px) {
   .app-header--sticky {
-    height: 114px;
-    padding: 2.6rem 4rem;
+    height: 64px;
+    padding: 1rem 4rem;
   }
 
   .app-header--sticky img {
-    height: 30px;
+    height: 24px;
+  }
+
+  .brand-logo {
+    width: 228px;
+  }
+
+  .brand {
+    width: 460px;
   }
 
   a {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1.65rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .brand-logo {
+    width: 340px;
+  }
+
+  .brand {
+    width: 688px;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .brand-logo {
+    width: 447px;
+  }
+
+  .brand {
+    width: 892px;
+  }
+
+  p {
+    font-size: 3.2rem;
   }
 }
 </style>

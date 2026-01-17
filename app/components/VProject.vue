@@ -1,19 +1,39 @@
 <script setup lang="ts">
 import type { ProjectsCollectionItem } from '@nuxt/content';
 
-defineProps<{
+const props = defineProps<{
   project: ProjectsCollectionItem
 }>()
 
-const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+const isMediumScreen = useMediaQuery('(min-width: 768px)')
+const descToggled = ref<boolean>(false)
+
+const hasDescription = computed(() => {
+  return props.project.description && props.project.description.length > 0
+})
+
+function handleToggle() {
+  descToggled.value = !descToggled.value
+}
 </script>
 
 <template>
   <article class="project">
     <header>
-      <h2>↓ {{  project.title }}</h2>
-      <p v-if="isLargeScreen">{{ project.description }}</p>
-      <p v-else>{{ project.shortDescription }}</p>
+      <h2>
+        <img class="arrow-icon" src="~/assets/icons/arrow-down-white.svg" alt="" />
+        {{ project.title }}
+        <ClientOnly>
+          <button v-if="isMediumScreen && hasDescription" @click="handleToggle">
+            <img v-if="descToggled" src="~/assets/icons/times-white.svg" alt="" />
+            <img v-else src="~/assets/icons/cross-white.svg" alt="" />
+          </button>
+        </ClientOnly>
+      </h2>
+      <div>
+        <p v-if="descToggled">{{ project.description }}</p>
+        <p v-else>{{ project.shortDescription }}</p>
+      </div>
     </header>
     <img :src="project.image" :alt="project.title" />
   </article>
@@ -29,9 +49,27 @@ article {
 
 h2 {
   padding: 0.5rem 0rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
-img {
+h2 button {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+}
+
+h2 button img {
+  width: 12px;
+}
+
+article > img {
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+article header > div {
+  padding-left: 1.25rem;
 }
 </style>
