@@ -5,6 +5,9 @@ const props = defineProps<{
   project: ProjectsCollectionItem
 }>()
 
+const { app } = useRuntimeConfig()
+const withBase = (path: string) => `${app.baseURL}${path.startsWith('/') ? path.slice(1) : path}`
+
 const isMediumScreen = useMediaQuery('(min-width: 768px)')
 const descToggled = ref<boolean>(false)
 const popupImageToggled = ref<boolean>(false) 
@@ -52,8 +55,8 @@ function handleToggle() {
       <img v-if="popupImageToggled" class="popup-close" src="~/assets/icons/times-bazaar-white.svg" alt="" @click="popupImageToggled = false"  />
     </header>
     <div class="image-wrap">
-      <img :src="project.image" :alt="project.title" />
-      <img v-if="popupImageToggled" :src="project.popupImage" :alt="project.title" />
+      <img :src="withBase(project.image)" :alt="project.title" />
+      <img v-if="popupImageToggled" :src="withBase(project.popupImage!)" :alt="project.title" />
     </div>
   </article>
 </template>
