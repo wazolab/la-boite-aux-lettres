@@ -12,7 +12,7 @@ const { isScrolled } = useScroll(scrollThreshold.value)
 </script>
 
 <template>
-  <header class="app-header">
+  <header class="app-header" id="top">
     <img class="brand-logo" src="~/assets/images/brand-logo.svg" :alt="`${appConfig.title} - Logo`" />
     <div>
       <img class="brand" src="~/assets/images/brand-mobile.svg" :alt="appConfig.title" />
@@ -24,16 +24,14 @@ const { isScrolled } = useScroll(scrollThreshold.value)
   </header>
   <header class="app-header--sticky" v-if="isScrolled">
     <img src="~/assets/images/brand-desktop.svg" :alt="appConfig.title" />
-
     <nav>
-      <!-- <NuxtLink v-if="isLargeScreen" to="#top">↓ Back on top</NuxtLink> -->
       <NuxtLink to="#about">
         <img class="arrow-icon" src="~/assets/icons/arrow-down-black.svg" alt="" />
         About
       </NuxtLink>
-      <NuxtLink v-if="isLargeScreen" to="#contact">
-        <img class="arrow-icon" src="~/assets/icons/arrow-down-black.svg" alt="" />
-        Contact
+      <NuxtLink v-if="isLargeScreen" to="#top">
+        <img class="arrow-icon" src="~/assets/icons/arrow-up-black.svg" alt="" />
+        Back on top
       </NuxtLink>
     </nav>
   </header>
@@ -104,7 +102,11 @@ nav {
 }
 
 a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   color: inherit;
+  font-size: 0.75rem;
 }
 
 p {
@@ -122,6 +124,12 @@ p {
     bottom: 3rem;
   }
 
+   .app-header > div > div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+   }
+
   .brand {
     width: 332px;
   }
@@ -133,6 +141,10 @@ p {
   p {
     font-size: 1.4rem;
     line-height: inherit;
+  }
+
+  a {
+    font-size: 0.9rem;
   }
 }
 
@@ -155,11 +167,11 @@ p {
   }
 
   a {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   p {
-    font-size: 1.65rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -172,8 +184,12 @@ p {
     width: 688px;
   }
 
+   a {
+    font-size: 1.35rem;
+  }
+
   p {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
 

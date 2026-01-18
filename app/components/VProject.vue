@@ -66,6 +66,11 @@ article {
   gap: 1rem;
 }
 
+header > div,
+h2 {
+  font-size: 0.75rem;
+}
+
 h2 {
   padding: 0.5rem 0rem;
   display: flex;
@@ -88,6 +93,7 @@ h2 button {
   margin-left: auto;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 h2 button img {
@@ -99,7 +105,7 @@ h2 button img {
   margin-bottom: 1rem;
 }
 
-article header > div {
+header > div {
   padding-left: 1.25rem;
 }
 
@@ -122,11 +128,44 @@ header {
   font-family: 'Bazaar', sans-serif;
   background: transparent;
   color: #FFFFFF;
-  border-radius: 10px;
-  border: 2px solid var(--primary-color);
-  padding: 0.25rem 0.5rem;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  border-radius: 16px;
+  border: 0.5px solid var(--primary-color);
+  padding: 0.3rem 0.4rem;
+  font-size: 1.25rem;
+  margin-top: 0.85rem;
   transform: rotate(-2.6deg);
+  line-height: 1.25rem;
 }
+
+@media (min-width: 768px) {
+  h2,
+  header > div {
+    font-size: 1rem;
+  }
+
+  .trigger-additional {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2,
+  header > div {
+    font-size: 1.15rem;
+  }
+
+  h2 button img {
+    width: 14px;
+  }
+
+  .trigger-additional {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 24px;
+  }
+}
+
 </style>

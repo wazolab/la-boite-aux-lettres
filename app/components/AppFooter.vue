@@ -3,13 +3,10 @@ const appConfig = useAppConfig()
 
 onMounted(() => {
   const protectedEmail = document.getElementById('protected-email')
-  const protectedPhone = document.getElementById('protected-phone')
 
   if(protectedEmail)
     protectedEmail.innerHTML = 'moc.' + 'liamg' + '@' + 'dramloc.' + 'ettelrual';
 
-  if(protectedPhone)
-    protectedPhone.textContent = atob('MDYgMDEgOTMgNzUgODc=');
 })
 </script>
 
@@ -19,9 +16,8 @@ onMounted(() => {
       <img src="~/assets/images/brand-mobile.svg" :alt="appConfig.title"></img>
       <address>
         Laurette Colmard<br>
-        <span id="protected-email" class="protected"></span><br>
         29 rue Colonel Bougault, 38100 Grenoble (FR)<br>
-        <span id="protected-phone"></span>
+        <span id="protected-email" class="protected"></span>
       </address>
     </div>
   </footer>
@@ -42,17 +38,77 @@ footer {
 .wrapper {
   display: flex;
   align-items: flex-end;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 1.5rem 0;
 }
 
 address {
-  font-weight: 500;
-  font-size: 0.75rem;
-  line-height: 0.75rem;
+  font-size: 0.65rem;
+  line-height: 12px;
 }
 
 img {
   height: 64px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    gap: 3rem;
+  }
+
+  img {
+    height: 104px;
+  }
+
+  address {
+    font-size: 0.75rem;
+    line-height: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    gap: 8rem;
+  }
+
+  img {
+    height: 120px;
+  }
+
+  address {
+    font-size: 0.95rem;
+    line-height: 15px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .wrapper {
+    gap: 20rem;
+  }
+
+  img {
+    height: 146px;
+  }
+
+  address {
+    font-size: 1rem;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .wrapper {
+    gap: 28rem;
+  }
+
+  img {
+    height: 155px;
+  }
+
+
+  address {
+    font-size: 1.15rem;
+    line-height: 22px;
+  }
 }
 </style>
