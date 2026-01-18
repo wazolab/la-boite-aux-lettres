@@ -1,14 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  $production: {
-    app: {
-      baseURL: '/la-boite-aux-lettres/'
-    }
-  },
-  content: {
-    experimental: { nativeSqlite: true }
-  },
   devtools: { enabled: true },
   css: ['@unocss/reset/eric-meyer.css'],
   fonts: {
@@ -20,6 +12,15 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
-    '@vueuse/nuxt'
-  ]
+    '@vueuse/nuxt',
+    'nuxt-studio'
+  ],
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'wazolab',
+      repo: 'la-boite-aux-lettres',
+      branch: 'main'
+    }
+  }
 })
