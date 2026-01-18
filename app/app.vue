@@ -11,8 +11,7 @@
 }
 
 html, body, p, a, address, h2 {
-  font-family: 'Abbiocco Beta', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', sans-serif;
+  font-family: 'Abbiocco Beta', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 a {
