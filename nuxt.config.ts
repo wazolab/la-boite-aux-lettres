@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['@unocss/reset/eric-meyer.css'],
+  content: {
+    experimental: {
+      nativeSqlite: true
+    }
+  },
   fonts: {
     defaults: {
       weights: [400, 500],
