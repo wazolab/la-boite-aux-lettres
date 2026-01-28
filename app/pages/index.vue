@@ -98,7 +98,8 @@ useSeoMeta({
 
 .load-more,
 #about article {
-  font-size: var(--text-sm);
+  font-size: 18px;
+  line-height: 22px;
 }
 
 article h2 {

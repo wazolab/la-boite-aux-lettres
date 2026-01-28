@@ -111,7 +111,7 @@ a {
 
 p {
   font-size: var(--text-lg);
-  line-height: var(--leading-normal);
+  line-height: 24px;
 }
 
 @media (min-width: 768px) {

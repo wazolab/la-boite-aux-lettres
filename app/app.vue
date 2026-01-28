@@ -23,8 +23,8 @@
   --space-16: 4rem;
 
   /* Typography scale - Mobile first (base) */
-  --text-xs: 0.65rem;
-  --text-sm: 0.75rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
   --text-base: 1rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;

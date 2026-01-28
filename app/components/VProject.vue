@@ -68,11 +68,12 @@ article {
 
 header > div,
 h2 {
-  font-size: var(--text-sm);
+  font-size: 18px;
+  line-height: 20px;;
 }
 
 h2 {
-  padding: var(--space-2) 0;
+  padding: var(--space-2) 0 0;
   display: flex;
   gap: var(--space-2);
   align-items: center;
@@ -118,6 +119,8 @@ header {
 .trigger-additional {
   cursor: pointer;
   align-self: flex-end;
+  margin-top: var(--space-3);
+  padding: var(--space-1) var(--space-2);
 }
 
 .popup-close {
@@ -130,11 +133,10 @@ header {
   color: var(--primary-color);
   border-radius: 16px;
   border: 2px solid var(--primary-color);
-  padding: var(--space-1) var(--space-2);
   font-size: var(--text-lg);
   line-height: var(--leading-tight);
-  margin-top: var(--space-3);
   transform: rotate(-2.6deg);
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -148,8 +150,12 @@ header {
     width: 14px;
   }
 
+  .popup-close,
   .trigger-additional {
     padding: var(--space-2) var(--space-2);
+  }
+
+  .trigger-additional {
     border-radius: 24px;
   }
 }

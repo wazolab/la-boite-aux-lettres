@@ -30,7 +30,6 @@ onMounted(() => {
   unicode-bidi: bidi-override;
   direction: rtl;
   color: inherit;
-  text-decoration: none;
 }
 
 footer {
@@ -48,7 +47,7 @@ footer {
 
 address {
   font-size: var(--text-xs);
-  line-height: var(--leading-relaxed);
+  line-height: 14.5px
 }
 
 img {
