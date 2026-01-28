@@ -2,11 +2,13 @@
 const appConfig = useAppConfig()
 
 onMounted(() => {
-  const protectedEmail = document.getElementById('protected-email')
+  const protectedEmail = document.getElementById('protected-email') as HTMLAnchorElement
 
-  if(protectedEmail)
-    protectedEmail.innerHTML = 'moc.' + 'liamg' + '@' + 'dramloc.' + 'ettelrual';
-
+  if (protectedEmail) {
+    const email = 'laurette.colmard' + '@' + 'gmail' + '.' + 'com'
+    protectedEmail.href = 'mailto:' + email
+    protectedEmail.innerHTML = 'moc.' + 'liamg' + '@' + 'dramloc.' + 'etterual'
+  }
 })
 </script>
 
@@ -17,7 +19,7 @@ onMounted(() => {
       <address>
         Laurette Colmard<br>
         29 rue Colonel Bougault, 38100 Grenoble (FR)<br>
-        <span id="protected-email" class="protected"></span>
+        <a id="protected-email" class="protected"></a>
       </address>
     </div>
   </footer>
@@ -27,6 +29,8 @@ onMounted(() => {
 .protected {
   unicode-bidi: bidi-override;
   direction: rtl;
+  color: inherit;
+  text-decoration: none;
 }
 
 footer {

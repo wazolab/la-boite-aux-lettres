@@ -129,7 +129,7 @@ header {
   background: transparent;
   color: #FFFFFF;
   border-radius: 16px;
-  border: 0.5px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   padding: 0.3rem 0.4rem;
   font-size: 1.25rem;
   margin-top: 0.85rem;
