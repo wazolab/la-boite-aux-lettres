@@ -55,9 +55,9 @@ const { isScrolled } = useScroll(scrollThreshold.value)
 }
 
 .app-header {
-  gap: 1rem;
+  gap: var(--space-4);
   flex-direction: column;
-  padding: 3rem 2rem;
+  padding: var(--space-12) var(--space-8);
   height: 68vh;
   box-sizing: border-box;
 }
@@ -65,7 +65,7 @@ const { isScrolled } = useScroll(scrollThreshold.value)
 .app-header > div {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .app-header--sticky {
@@ -73,7 +73,7 @@ const { isScrolled } = useScroll(scrollThreshold.value)
   top: 0;
   width: 100%;
   height: 34px;
-  padding: 0.75rem 1rem;
+  padding: var(--space-3) var(--space-4);
   align-items: center;
   animation: slideDown 0.3s ease;
   z-index: 10;
@@ -97,21 +97,21 @@ const { isScrolled } = useScroll(scrollThreshold.value)
 
 nav {
   display: flex;
-  gap: 2.5rem;
+  gap: var(--space-10);
   margin-left: auto;
 }
 
 a {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-2);
   align-items: center;
   color: inherit;
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
 }
 
 p {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
 }
 
 @media (min-width: 768px) {
@@ -121,14 +121,14 @@ p {
 
   .app-header > div {
     position: absolute;
-    bottom: 3rem;
+    bottom: var(--space-12);
   }
 
-   .app-header > div > div {
+  .app-header > div > div {
     display: flex;
     flex-direction: row;
-    gap: 0.25rem;
-   }
+    gap: var(--space-1);
+  }
 
   .brand {
     width: 332px;
@@ -137,21 +137,12 @@ p {
   .brand-logo {
     width: 168px;
   }
-
-  p {
-    font-size: 1.4rem;
-    line-height: inherit;
-  }
-
-  a {
-    font-size: 0.9rem;
-  }
 }
 
 @media (min-width: 1024px) {
   .app-header--sticky {
     height: 64px;
-    padding: 1rem 4rem;
+    padding: var(--space-4) var(--space-16);
   }
 
   .app-header--sticky img {
@@ -165,14 +156,6 @@ p {
   .brand {
     width: 460px;
   }
-
-  a {
-    font-size: 1.15rem;
-  }
-
-  p {
-    font-size: 1.75rem;
-  }
 }
 
 @media (min-width: 1536px) {
@@ -183,14 +166,6 @@ p {
   .brand {
     width: 688px;
   }
-
-   a {
-    font-size: 1.35rem;
-  }
-
-  p {
-    font-size: 2.4rem;
-  }
 }
 
 @media (min-width: 1920px) {
@@ -200,10 +175,6 @@ p {
 
   .brand {
     width: 892px;
-  }
-
-  p {
-    font-size: 3.2rem;
   }
 }
 </style>

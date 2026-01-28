@@ -63,18 +63,18 @@ article {
   border-top: 1px solid var(--primary-color);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 header > div,
 h2 {
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
 }
 
 h2 {
-  padding: 0.5rem 0rem;
+  padding: var(--space-2) 0;
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-2);
   align-items: center;
 }
 
@@ -102,11 +102,11 @@ h2 button img {
 
 .image-wrap > img {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 header > div {
-  padding-left: 1.25rem;
+  padding-left: var(--space-5);
 }
 
 header {
@@ -125,47 +125,32 @@ header {
 }
 
 .trigger-additional {
-  font-family: 'Bazaar', sans-serif;
+  font-family: var(--font-accent);
   background: transparent;
-  color: #FFFFFF;
+  color: var(--primary-color);
   border-radius: 16px;
   border: 2px solid var(--primary-color);
-  padding: 0.3rem 0.4rem;
-  font-size: 1.25rem;
-  margin-top: 0.85rem;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-lg);
+  line-height: var(--leading-tight);
+  margin-top: var(--space-3);
   transform: rotate(-2.6deg);
-  line-height: 1.25rem;
 }
 
 @media (min-width: 768px) {
-  h2,
-  header > div {
-    font-size: 1rem;
-  }
-
   .trigger-additional {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
     border-radius: 20px;
   }
 }
 
 @media (min-width: 1024px) {
-  h2,
-  header > div {
-    font-size: 1.15rem;
-  }
-
   h2 button img {
     width: 14px;
   }
 
   .trigger-additional {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-    padding: 0.4rem 0.5rem;
+    padding: var(--space-2) var(--space-2);
     border-radius: 24px;
   }
 }
-
 </style>

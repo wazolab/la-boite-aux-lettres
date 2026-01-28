@@ -61,13 +61,13 @@ useSeoMeta({
 .nuxt-content {
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  padding: 1rem;
+  padding: var(--space-4);
 }
 
 .load-more {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   background: none;
   border: none;
   color: var(--primary-color);
@@ -80,8 +80,8 @@ useSeoMeta({
 }
 
 #about {
-  padding: 0 1rem;
-  margin-top: 1rem;
+  padding: 0 var(--space-4);
+  margin-top: var(--space-4);
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
@@ -89,72 +89,60 @@ useSeoMeta({
 #about article {
   border-top: 1px solid var(--secondary-color);
   border-bottom: 1px solid var(--secondary-color);
-  padding: 0.5rem 0 1rem 0;
+  padding: var(--space-2) 0 var(--space-4) 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  line-height: 15px;
+  gap: var(--space-2);
+  line-height: var(--leading-normal);
 }
 
 .load-more,
 #about article {
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
 }
 
 article h2 {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 @media (min-width: 768px) {
   #about {
-    margin-top: 2rem;
+    margin-top: var(--space-8);
   }
 
   #about article {
-    padding-bottom: 2rem;
+    padding-bottom: var(--space-8);
   }
 
   #about article > div {
     margin-left: 33.333%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-  }
-
-  .load-more,
-  #about article {
-    font-size: 1rem;
-    line-height: 20px;
+    gap: var(--space-4);
   }
 }
 
 @media (min-width: 1024px) {
   #about {
-    margin-top: 2.5rem;
+    margin-top: var(--space-10);
   }
 
   #about article {
-    padding-bottom: 2.5rem;
+    padding-bottom: var(--space-10);
   }
 
   #about article > div {
-    padding-right: 1rem;
-  }
-
-  .load-more,
-  #about article {
-    font-size: 1.15rem;
-    line-height: 22px;
+    padding-right: var(--space-4);
   }
 }
 
 @media (min-width: 1536px) {
   #about article > div {
     flex-direction: row;
-    gap: 2rem;
-    padding-right: 2rem;
+    gap: var(--space-8);
+    padding-right: var(--space-8);
   }
 
   #about article > div > p {

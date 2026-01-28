@@ -36,19 +36,19 @@ onMounted(() => {
 footer {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  padding: 0 1.5rem;
+  padding: 0 var(--space-6);
 }
 
 .wrapper {
   display: flex;
   align-items: flex-end;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
 }
 
 address {
-  font-size: 0.65rem;
-  line-height: 12px;
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
 }
 
 img {
@@ -57,31 +57,21 @@ img {
 
 @media (min-width: 768px) {
   .wrapper {
-    gap: 3rem;
+    gap: var(--space-12);
   }
 
   img {
     height: 104px;
   }
-
-  address {
-    font-size: 0.75rem;
-    line-height: 14px;
-  }
 }
 
 @media (min-width: 1024px) {
   .wrapper {
-    gap: 8rem;
+    gap: var(--space-16);
   }
 
   img {
     height: 120px;
-  }
-
-  address {
-    font-size: 0.95rem;
-    line-height: 15px;
   }
 }
 
@@ -93,11 +83,6 @@ img {
   img {
     height: 146px;
   }
-
-  address {
-    font-size: 1rem;
-    line-height: 20px;
-  }
 }
 
 @media (min-width: 1920px) {
@@ -107,12 +92,6 @@ img {
 
   img {
     height: 155px;
-  }
-
-
-  address {
-    font-size: 1.15rem;
-    line-height: 22px;
   }
 }
 </style>
